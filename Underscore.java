@@ -56,3 +56,5 @@ public class Underscore {
 		System.out.println();
 	}
 }
+//String sınıfı metotları, immutable metotlardır.
+//Yani bu sınıfın metotları değiştirilemez.
