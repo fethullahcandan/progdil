@@ -20,7 +20,7 @@ public class Underscore {
 		int son = SonIndisBulma(karakterDizisi);
 		
 		String dizge = "";
-		for (int i = ilk; i < son; i++) {
+		for (int i = ilk; i <= son; i++) { 
 			dizge = dizge + karakterDizisi[i];
 		}	
 		
@@ -35,6 +35,20 @@ public class Underscore {
 		for ( int i = 0; i <uzunluk; i++ ) {
 			System.out.print(karakterDizisi[i]);
 		}
+		//27 ile 37. satırlar arasındaki bölüm farklı olarak bu şekilde de yapılabilir
+		/*
+		for (int i =0; i<uzunluk; i++)
+		{
+			if(i<ilk)
+			{
+				dizge ="_" + dizge;
+			}
+			if(i>son)
+			{
+				dizge=dizge + "_";
+			}
+		}
+		*/
 		System.out.println();
 	}
 	static int IlkIndisBulma(char[] dizi) {
