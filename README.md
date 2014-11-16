@@ -1,2 +1,2 @@
-progdil
+Programlama Dilleri Dönem Projesi
 =======
