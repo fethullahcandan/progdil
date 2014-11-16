@@ -156,7 +156,7 @@ public class IsimUreteci {
 		}
 		
 		Random rnd = new Random();
-		int j = 0;
+
 		int olasilik = Sifatlar.length*Adlar.length;
 		
 		for (int i = 0; i < sayi;) {
@@ -164,20 +164,18 @@ public class IsimUreteci {
 			int AdIndex = rnd.nextInt(Adlar.length);
 			int SifatIndex = rnd.nextInt(Sifatlar.length);
 			
-			String ifade = Sifatlar[SifatIndex]+"-"+Adlar[AdIndex];
-			File f = new File("/home/celikel/GitHub/progdil/" + ifade);
-			
 			File s = new File("/home/celikel/GitHub/progdil/");
 			int dosya_sayisi = s.list().length;
 			
+			String ifade = Sifatlar[SifatIndex]+"-"+Adlar[AdIndex];
+			File f = new File("/home/celikel/GitHub/progdil/" + ifade);
 			
 			if(f.isDirectory()) {
-				j += 1;
 				if(dosya_sayisi == olasilik)
 					break;
 			}
 			else {
-				System.out.println((i+1)+". Üretilen ==> "+ ifade);
+				System.out.println((i+1)+". Üretilen ==>  "+ ifade);
 				File klasor = new File("/home/celikel/GitHub/progdil/" + ifade);
 				klasor.mkdir();	
 				i++;
