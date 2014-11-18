@@ -1,13 +1,13 @@
 Programlama Dilleri Dönem Projesi
 =======
-Kodun Derlenmesi ve Çalıştırma
-=======
- ReplaceUnderscoreWithSpace
- --------
-. javac Underscore.java
-. java Underscore
+###Kodun Derlenmesi ve Çalıştırma
+ 
+ ###ReplaceUnderscoreWithSpace
 
-IsimUret
------
-. javac IsimUreteci.java
-. java IsimUreteci
+  '$ javac Underscore.java'
+  '$java Underscore'
+
+###IsimUret
+
+'$javac IsimUreteci.java'
+'$java IsimUreteci'
