@@ -6,180 +6,222 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class IsimUreteci {
-	public static void main (String[] args)	{
-		Scanner s = new Scanner(System.in);
-		boolean durum = false;
-		String dil;
-		int sayi;
+
+	public static void main(String[] args) {
+
+		System.out.println("\n***************İsim Üreteci Programına Hoşgeldiniz.***************\n");
 		
-		do {
-			System.out.println("Dil seçin Türkçe için tr İngilizce için en");
-			dil = s.next();
-			System.out.println("Lütfen üretilecek isim sayısını girin ");
-			sayi = s.nextInt();
-			if(dil.equals("tr") || dil.equals("en"))
-				durum = true;
+		Scanner girilen = new Scanner(System.in);
+
+		boolean durum = true;
+		String secilenDil = "";
+		int adet = 0;
+		String tercih = "";
+
+		while(durum) {
+
+			System.out.println("\tLütfen hangi dilde dosya adı üretmek istediğinizi seçiniz.(Tr/Eng): ");
+
+			secilenDil = girilen.next().toLowerCase();
+
+			if(secilenDil.equals("tr") || secilenDil.equals("eng")) {
+
+				System.out.println("\tLütfen üretmek istediğiniz dosya ismi sayısını giriniz: ");
+
+				adet = girilen.nextInt();
+				durum = false;
+			}
+			
 			else {
-				System.out.println("Yanlış dil seçtin");
-			}	
-		} while(durum != true);
+
+				System.out.println("\nYanlış dil tercihinde bulundunuz lütfen tekrar giriş yapınız!\n");
+				System.out.println("--Programdan çıkmak için 'E'e devam etmek için herhangi bir tuşa basınız: ");
 		
-		IsimUret(dil, sayi);
+				tercih = girilen.next().toLowerCase();
+				
+				if(tercih.equals("e")) {
+					return;
+				}
+			}
+
+		}
+		
+		isimUret(secilenDil, adet);
 	}
 
-	static void IsimUret(String dil, int sayi) {
+	static void isimUret(String Language, int Adet) {
+		
 		String[]
-				isimler = {
-					"abajur",
-					"baca",
-					"canavar",
-					"çaba",
-					"demeç",
-					"el",
-					"fakülte",
-					"gaflet",
-					"hatıra",
-					"ıhlamur",
-					"iade",
-					"jandarma",
-					"kaş",
-					"labirent",
-					"medeniyet",
-					"nabız",
-					"ocak",
-					"öncü",
-					"puan",
-					"rahat",
-					"sene",
-					"şablon",
-					"tesis",
-					"ucube",
-					"ücret",
-					"vaat",
-					"yoğurt",
-					"zehir",
-				},
-				sifatlar = {
-					"ait",
-					"basit",
-					"cıvık",
-					"çabuk",
-					"dinamik",
-					"erişilebilir",
-					"feci",
-					"gri",
-					"hoyrat",
-					"ılık",
-					"iki",
-					"kaplı",
-					"lacivert",
-					"müstakil",
-					"nitel",
-					"olağan",
-					"öncül",
-					"patlayıcı",
-					"rafadan",
-					"sade",
-					"şık",
-					"tatlı",
-					"uçan",
-					"ücra",
-					"vasat",
-					"yıkık",
-					"zayıf",
-				},
-				names = {
-					"ability",
-					"bigot",
-					"cab",
-					"dab",
-					"eagle",
-					"fable",
-					"gable",
-					"haberdasher",
-					"ice",
-					"jackal",
-					"karat",
-					"lab",
-					"machine",
-					"nail",
-					"oak",
-					"pace",
-					"quack",
-					"rabbit",
-					"saber",
-					"tabby",
-					"ulcer",
-					"vacancy",
-					"wad",
-					"xenophobia",
-					"yacht",
-					"zinc",
-				},
-				adjectives = {
-					"akin",
-					"beatiful",
-					"conscious",
-					"damned",
-					"each",
-					"fair",
-					"gangling",
-					"habitual",
-					"idle",
-					"jocular",
-					"known",
-					"laconic",
-					"macabre",
-					"nasty",
-					"oblique",
-					"pugnacious",
-					"quadruple",
-					"radical",
-					"sad",
-					"tactful",
-					"ubiqutous",
-					"vague",
-					"warlike",
-					"yellow",
-					"zigzag",
-				};
+				TrAdlar = {
+				
+				"abajur",
+				"baca",
+				"canavar",
+				"çaba",
+				"demeç",
+				"el",
+				"fakülte",
+				"gaflet",
+				"ıhlamur",
+				"iade",
+				"jandarma",
+				"kaş",
+				"labirent",
+				"medeniyet",
+				"nabız",
+				"ocak",
+				"puan",					
+				"rahat",
+				"sene",
+				"şablon",
+				"tesis",
+				"ücret",
+				"vaat",
+				"yoğurt",
+				"zehir",
+			},
+
+			EngAdlar = {
+			
+				"ability",
+				"bigot",
+				"cab",
+				"dab",
+				"eagle",
+				"fable",
+				"gable",
+				"haberdasher",
+				"ice",
+				"jackal",
+				"karat",
+				"lab",
+				"machine",
+				"nail",
+				"oak",
+				"pace",
+				"quack",
+				"rabbit",
+				"saber",
+				"tabby",
+				"vacancy",
+				"wad",
+				"xenophobia",
+				"yacht",
+				"zinc",
+		},
+
+		TrSifatlar = {
+		
+
+				"basit",
+				"cıvık",
+				"çabuk",
+				"dinamik",
+				"feci",
+				"gri",
+				"hoyrat",
+				"ılık",
+				"iki",
+				"kaplı",
+				"lacivert",
+				"müstakil",
+				"nitel",
+				"olağan",
+				"öncül",
+				"patlayıcı",
+				"rafadan",
+				"sade",
+				"şık",
+				"tatlı",
+				"uçan",
+				"ücra",
+				"vasat",
+				"yıkık",
+				"zayıf",
+		},
+
+		EngSifatlar = {
+		
+		
+				"akin",
+				"beatiful",
+				"conscious",
+				"damned",
+				"each",
+				"fair",
+				"gangling",
+				"habitual",
+				"idle",
+				"jocular",
+				"known",
+				"laconic",
+				"macabre",
+				"nasty",
+				"oblique",
+				"pugnacious",
+				"quadruple",
+				"radical",
+				"sad",
+				"tactful",
+				"ubiqutous",
+				"vague",
+				"warlike",
+				"yellow",
+				"zigzag",
+		};
 
 		String[] Adlar = null, Sifatlar = null;
-	
-		if (dil.equals("tr")) {
-			Adlar = isimler;
-			Sifatlar = sifatlar;
-		}
-		else if (dil.equals("en")) {
-			Adlar = names;
-			Sifatlar = adjectives;
-		}
-		
-		Random rnd = new Random();
+		String yol = "";
 
-		int olasilik = Sifatlar.length*Adlar.length;
+		if (Language.equals("tr")) {
+
+			Adlar = TrAdlar;
+			Sifatlar = TrSifatlar;
+			yol = "Turkce Dosyalar/";
+		}
+
+		else if (Language.equals("eng")) {
+
+			Adlar = EngAdlar;
+			Sifatlar = EngSifatlar;
+			yol = "Ingilizce Dosyalar/"; 
+		}
+
+		Random rnd = new Random();
 		
-		for (int i = 0; i < sayi;) {
-			
+		int olasilik = Sifatlar.length * Adlar.length; // Bir kök dizinde bulunabilecek maksimum dosya sayýsý heplanmýþtýr.
+
+		System.out.println("\n>>> SONUÇLAR <<<\n");
+		
+		for (int i = 0; i < Adet;) {
+
 			int AdIndex = rnd.nextInt(Adlar.length);
 			int SifatIndex = rnd.nextInt(Sifatlar.length);
+			String ifade = Sifatlar[SifatIndex] + " " + Adlar[AdIndex];
 			
-			File s = new File("/home/celikel/progdil/");
-			int dosya_sayisi = s.list().length;
-			
-			String ifade = Sifatlar[SifatIndex]+"-"+Adlar[AdIndex];
-			File f = new File("/home/celikel/progdil/" + ifade);
-			
-			if(f.isDirectory()) {
-				if(dosya_sayisi == olasilik)
+			File uretilecekDosya = new File("/home/celikel/ProgDil/" + yol + ifade);
+			File dosyaSayisi = new File("/home/celikel/ProgDil/" + yol);
+
+			int dSayisi = dosyaSayisi.list().length;
+
+			if(uretilecekDosya.isDirectory()) { // Kök dizinde, üretilecek olan dosya var mý?
+
+				if(dSayisi  == olasilik) { // Kök dizindeki dosya sayýsý, maksimum oluþacak dosya ismi sayýsýna eþit mi?
+
+					System.out.println("\n!!!ÜRETİLEBİLECEK MAKSIMUM DOSYA SAYISINA ULAŞILMIŞTIR!!!");
 					break;
+				}
+
+				System.out.println("\n\tÜretilecek olan '" + ifade + "'" + " adlı klasör belirtilen kök dizinde zaten bulunmaktadır. Bu yüzden tekrar üretilmemiştir.\n");
 			}
+
 			else {
-				System.out.println((i+1)+". Üretilen ==>  "+ ifade);
-				File klasor = new File("/home/celikel/progdil/" + ifade);
-				klasor.mkdir();	
-				i++;
-			}
+
+				System.out.println((i + 1) + ". Üretilen ==> " + ifade);
+				
+				uretilecekDosya.mkdir(); // Belirtilen yoldaki dosya oluşturuldu.
+				i ++ ;
+			}		
 		}
 	}
 }
