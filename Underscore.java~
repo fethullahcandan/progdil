@@ -37,6 +37,7 @@ public class Underscore {
 		for (i = 0; i < dizi.length; i++) {
 			if (dizi[i] != '_' ) 
 				break;
+			
 		}
 		return i;
 	}
