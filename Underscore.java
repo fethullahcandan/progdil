@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class Underscore {
 	public static void main(String[] args) {
+		
 		Scanner s = new Scanner(System.in);
 		System.out.println("Kelime girin: ");
 		String str = s.next();
