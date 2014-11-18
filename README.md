@@ -5,7 +5,7 @@ Programlama Dilleri Dönem Projesi
 ###ReplaceUnderscoreWithSpace()
 
 * javac Underscore.java
-* java Underscore$
+* java Underscore
 
 ###IsimUret()
 
