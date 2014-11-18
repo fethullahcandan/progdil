@@ -4,10 +4,10 @@ Programlama Dilleri Dönem Projesi
  
  ###ReplaceUnderscoreWithSpace()
 
-  $ javac Underscore.java $
-  $ java Underscore $
+  $ javac Underscore.java
+  $ java Underscore
 
-###IsimUret()
+ ###IsimUret()
 
- $ javac IsimUreteci.java $
- $ java IsimUreteci $
+ $ javac IsimUreteci.java
+ $ java IsimUreteci
