@@ -189,7 +189,7 @@ public class IsimUreteci {
 
 		Random rnd = new Random();
 		
-		int olasilik = Sifatlar.length * Adlar.length; // Bir kök dizinde bulunabilecek maksimum dosya sayýsý heplanmýþtýr.
+		int olasilik = Sifatlar.length * Adlar.length; // Bir kök dizinde bulunabilecek maksimum dosya sayısı hesaplanmıştır.
 
 		System.out.println("\n>>> SONUÇLAR <<<\n");
 		
@@ -204,9 +204,9 @@ public class IsimUreteci {
 
 			int dSayisi = dosyaSayisi.list().length;
 
-			if(uretilecekDosya.isDirectory()) { // Kök dizinde, üretilecek olan dosya var mý?
+			if(uretilecekDosya.isDirectory()) { // Kök dizinde, üretilecek olan dosya var mı?
 
-				if(dSayisi  == olasilik) { // Kök dizindeki dosya sayýsý, maksimum oluþacak dosya ismi sayýsýna eþit mi?
+				if(dSayisi  == olasilik) { // Kök dizindeki dosya sayısı, maksimum oluşacak dosya ismi sayısına eşit mi?
 
 					System.out.println("\n!!!ÜRETİLEBİLECEK MAKSIMUM DOSYA SAYISINA ULAŞILMIŞTIR!!!");
 					break;
